@@ -13,7 +13,7 @@ Board.prototype.init = function () {
     for (var j = 0; j < this.col; j++) {
       var iElem = document.createElement('div');
       iElem.classList.add('div-col');
-      console.log(iElem);
+      //console.log(iElem);
       iElem.dataset['position'] = '' + i + j;
       childDiv.appendChild(iElem);
     }
@@ -27,17 +27,20 @@ Board.prototype.init = function () {
 };
 
 Board.prototype.bindEvents = function () {
+  var colour = getRandomColor();
   this.el.addEventListener('click', (e) => {
-    console.log(e.target.dataset);
+    //console.log(e.target.dataset);
     var position = e.target.dataset['position'];
     var style = document.createElement('style');
-    var colour = getRandomColor();
-    style.type = 'text/css';
-    style.innerHTML = '.cssClass { color:#' + colour + '}';
-    console.log(position);
+
+    //console.log(position);
     // document.getElementById(position).innerHTML = position;
     //e.target.classList.add('gray');
-    e.target.style.backgroundColor = colour;
+    console.log(e.target.dataset);
+    if (position) {
+      e.target.style.backgroundColor = colour;
+    }
+
     //document.getElementById(position).classList.add(style);
   });
 };
@@ -51,6 +54,6 @@ function getRandomColor() {
   return color;
 }
 
-console.log(getRandomColor());
-// Open console to see the generated color
+//console.log(getRandomColor());
+// Open //console to see the generated color
 new Board('#board', 10, 10, null);
