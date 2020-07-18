@@ -36,7 +36,8 @@ Board.prototype.bindEvents = function () {
     style.innerHTML = '.cssClass { color:#' + colour + '}';
     console.log(position);
     // document.getElementById(position).innerHTML = position;
-    e.target.classList.add('gray');
+    //e.target.classList.add('gray');
+    e.target.style.backgroundColor = colour;
     //document.getElementById(position).classList.add(style);
   });
 };
