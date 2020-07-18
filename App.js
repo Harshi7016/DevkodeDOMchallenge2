@@ -28,11 +28,13 @@ Board.prototype.init = function () {
 
 Board.prototype.bindEvents = function () {
   this.el.addEventListener('click', (e) => {
+    console.log(e.target.dataset);
     var position = e.target.dataset['position'];
     var style = document.createElement('style');
     var colour = getRandomColor();
     style.type = 'text/css';
     style.innerHTML = '.cssClass { color:#' + colour + '}';
+    console.log(position);
     document.getElementById(position).classList.add(style);
   });
 };
