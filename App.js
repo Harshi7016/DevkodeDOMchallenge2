@@ -35,7 +35,9 @@ Board.prototype.bindEvents = function () {
     style.type = 'text/css';
     style.innerHTML = '.cssClass { color:#' + colour + '}';
     console.log(position);
-    document.getElementById(position).classList.add(style);
+    // document.getElementById(position).innerHTML = position;
+    e.target.classList.add('gray');
+    //document.getElementById(position).classList.add(style);
   });
 };
 
