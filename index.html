@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie-edge" />
+    <title>Pixel Art</title>
+    <style>
+      .fa-star-o:before {
+        content: '\f006';
+        color: #5f6368;
+      }
+
+      .fa-star:before {
+        content: '\f005';
+        color: #d56e0c;
+      }
+      .div-col {
+        width: 60px;
+        height: 20px;
+        border: #5f6368;
+        border: 1px solid blue;
+
+        display: flex;
+        justify-content: space-between;
+      }
+      .div-row {
+        /* display: grid; */
+
+        display: flex;
+        /* justify-content: space-between; */
+        /* Number of columns, in your case two boxes on the same line */
+        /* grid-template-columns: auto auto; */
+      }
+      .board {
+        position: fixed;
+        top: 30%;
+        left: 30%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>Hi</p>
+    <button onclick="getRandomColor()">Hi</button>
+    <div id="board" class="board"></div>
+    <script src="App.js"></script>
+  </body>
+</html>
