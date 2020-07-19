@@ -29,19 +29,17 @@ Board.prototype.init = function () {
 Board.prototype.bindEvents = function () {
   var colour = getRandomColor();
   this.el.addEventListener('click', (e) => {
-    //console.log(e.target.dataset);
     var position = e.target.dataset['position'];
-    var style = document.createElement('style');
-
-    //console.log(position);
-    // document.getElementById(position).innerHTML = position;
-    //e.target.classList.add('gray');
+    if (position) {
+      e.target.style.backgroundColor = colour;
+    }
+  });
+  this.el.addEventListener('dragend', (e) => {
+    var position = e.target.dataset['position'];
     console.log(e.target.dataset);
     if (position) {
       e.target.style.backgroundColor = colour;
     }
-
-    //document.getElementById(position).classList.add(style);
   });
 };
 
